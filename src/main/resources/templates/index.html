@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEMO</title>
+    <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+    <style>
+        input {
+            padding: 6px;
+            border: 1px solid gray;
+            border-radius: 8px;
+            outline: none;
+        }
+        .items {
+            padding-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <img class="htmx-indicator" src="https://i.gifer.com/ZKZg.gif" id="globalloading" style="height: 60px; width: 60px; margin: auto; display: flex; align-items: center;" />
+    <div style="max-width: 500px; width: 100%">
+        Reverse Number
+
+        <div class="items">
+            <input hx-indicator=".htmx-indicator" type="search" name="number" hx-post="/reverse-number" hx-target="#reverse-value" hx-trigger="input changed delay:500ms, search"  placeholder="Введите число" />
+            <div>-></div>
+            <div id="reverse-value">-</div>
+        </div>
+    </div>
+
+    <div style="max-width: 500px; width: 100%">
+        Palindrom
+
+        <div class="items">
+            <input hx-indicator=".htmx-indicator" type="search" name="text" hx-post="/palindrom" hx-target="#palindrom-value" hx-trigger="input changed delay:500ms, search"  placeholder="Введите строку" />
+            <div>-></div>
+            <div id="palindrom-value">-</div>
+        </div>
+    </div>
+
+    <div style="max-width: 500px; width: 100%">
+        AVG Number
+
+        <div class="items">
+            <input hx-indicator=".htmx-indicator" type="search" name="avgnumber" hx-post="/avg-number" hx-target="#avg-value" hx-trigger="input changed delay:500ms, search"  placeholder="Введите числа для расчета среднего значения" />
+            <div>-></div>
+            <div id="avg-value">-</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
